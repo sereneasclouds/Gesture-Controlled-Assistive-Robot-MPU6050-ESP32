@@ -35,7 +35,7 @@ The project was developed as a **mobility-support proof-of-concept**, demonstrat
 ---
 ## Gesture Transmitter
 
-`Gesture_Transmitter.ino` contains the embedded firmware responsible for the gesture-control interface.
+`transmitter_code.ino` contains the embedded firmware responsible for the gesture-control interface.
 
 The transmitter reads motion data from the MPU6050 and processes the sensor measurements to identify the user's intended navigation command.
 
