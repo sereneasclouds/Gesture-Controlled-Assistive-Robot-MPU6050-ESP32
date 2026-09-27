@@ -1,53 +1,64 @@
-# Gesture-Controlled Assistive Robot: MPU6050 and ESP32
+# Gesture-Controlled Assistive Robot
 
-A **gesture-controlled assistive robot proof-of-concept** developed using an **MPU6050 inertial sensor and ESP32 microcontroller** to translate hand gestures into robot navigation commands.
+A gesture-controlled assistive mobility robot developed as a proof-of-concept for hands-free robotic navigation. The system uses an **MPU6050 accelerometer/gyroscope and ESP32-based embedded control** to interpret hand gestures and convert them into directional commands for robot movement.
 
-The project explores gesture-based human–robot interaction for mobility assistance, with the aim of providing an intuitive control interface for an assistive robotic platform.
-
-The system combines embedded control, inertial sensing, custom electronics, motor control, and a fabricated robotic chassis.
+The project combines **embedded C, custom electronics, sensor-based gesture recognition, motor control, and robotic mobility** to demonstrate an intuitive human-robot interaction interface.
 
 ---
 
 ## Project Overview
 
-The project investigates the use of **hand gestures as an intuitive control mechanism for an assistive mobile robot**.
+The Gesture-Controlled Assistive Robot is designed to provide an alternative method of controlling a mobile robot through hand gestures rather than conventional switches or joysticks.
 
-An **MPU6050 accelerometer/gyroscope** is used to detect changes in hand orientation and movement. The ESP32 processes the sensor data and converts recognised gestures into corresponding navigation commands for the robot.
+A wearable gesture-control unit uses an **MPU6050 inertial measurement unit (IMU)** to detect changes in hand orientation and acceleration. These movements are processed by the microcontroller and translated into navigation commands such as forward, backward, left, and right.
 
-The physical prototype includes a custom-built robotic chassis and custom electronics developed for motor control and power distribution.
+The corresponding commands can then be used to control the robot's movement through its motor-control system.
+
+The project was developed as a **mobility-support proof-of-concept**, demonstrating how gesture recognition can be integrated with an embedded robotic platform.
 
 ---
 
 ## Key Features
 
 - Gesture-based robot navigation
-- MPU6050 accelerometer and gyroscope sensing
+- MPU6050-based motion and orientation sensing
 - ESP32-based embedded control
-- Real-time gesture detection
-- Gesture-to-navigation command conversion
-- Custom electronics integration
-- Motor control using an MDD10A motor driver
-- Custom power distribution board
+- Embedded C implementation
+- Real-time gesture interpretation
+- Directional navigation using hand movements
+- Custom electronics and power distribution
+- MDD10A motor driver integration
+- Custom PCB designed using KiCad
 - Fabricated mobile robot chassis
-- Assistive robotics proof-of-concept
+- Designed as a mobility-support proof-of-concept
 
 ---
+## Gesture Transmitter
 
+`Gesture_Transmitter.ino` contains the embedded firmware responsible for the gesture-control interface.
+
+The transmitter reads motion data from the MPU6050 and processes the sensor measurements to identify the user's intended navigation command.
+
+This firmware represents the core **gesture-to-control concept** of the project, connecting human hand movements with robotic navigation.
 ## System Concept
 
+The system follows a gesture-to-navigation approach:
+
 ```text
-Hand Movement / Gesture
-          ↓
-      MPU6050
-          ↓
-   Sensor Data Acquisition
-          ↓
-        ESP32
-          ↓
-   Gesture Recognition
-          ↓
- Navigation Command
-          ↓
-   Motor Controller
-          ↓
-     Robot Movement
+Hand Movement
+      │
+      ▼
+   MPU6050
+      │
+      ▼
+Gesture Transmitter
+      │
+      │  Navigation Command
+      ▼
+   ESP32
+      │
+      ▼
+ Motor Control
+      │
+      ▼
+ Mobile Robot
