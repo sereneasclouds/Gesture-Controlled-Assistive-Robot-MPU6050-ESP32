@@ -1,4 +1,4 @@
-# Gesture-Controlled Assistive Robot — MPU6050 + ESP32
+# Gesture-Controlled Assistive Robot: MPU6050 and ESP32
 
 A **gesture-controlled assistive robot proof-of-concept** developed using an **MPU6050 inertial sensor and ESP32 microcontroller** to translate hand gestures into robot navigation commands.
 
